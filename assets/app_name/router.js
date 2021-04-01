@@ -27,7 +27,7 @@ import {{ camel_case_app_name }} from "./{{ app_name }}.vue";
 export default new VueRouter({
     routes: [
         {
-            path: "/{{ app_name }}/",
+            path: "/",
             component: {{ camel_case_app_name }},
         },
     ]
