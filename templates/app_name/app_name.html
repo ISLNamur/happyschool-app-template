@@ -9,8 +9,8 @@
 
 <script>
     const current_app = "{{ app_name }}";
-    const settings = JSON.parse('{{ settings|safe }}');;
-    const menu = {{ menu|safe }};
+    const settings = JSON.parse('{% templatetag openvariable %} settings|safe {% templatetag closevariable %}');;
+    const menu = {% templatetag openvariable %} menu|safe {% templatetag closevariable %};
 </script>
 <div id="vue-app"></div>
 
