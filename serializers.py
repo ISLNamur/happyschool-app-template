@@ -19,7 +19,7 @@
 
 from rest_framework import serializers
 
-from {{ camel_case_app_name }}.models import {{ camel_case_app_name }}SettingsModel
+from .models import {{ camel_case_app_name }}SettingsModel
 
 
 class {{ camel_case_app_name }}SettingsSerializer(serializers.ModelSerializer):

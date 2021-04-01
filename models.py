@@ -18,11 +18,10 @@
 # along with HappySchool.  If not, see <http://www.gnu.org/licenses/>.
 
 from django.db import models
-
+from core.models import TeachingModel
 
 class {{ camel_case_app_name }}SettingsModel(models.Model):
     teachings = models.ManyToManyField(TeachingModel, default=None)
-    all_access = models.ManyToManyField(Group, default=None, blank=True)
 
 #class {{ camel_case_app_name }}Model:
     #pass
