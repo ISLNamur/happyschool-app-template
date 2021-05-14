@@ -34,8 +34,8 @@ from .models import {{ camel_case_app_name }}SettingsModel
 from .serializers import {{ camel_case_app_name }}SettingsSerializer
 
 
-def get_menu_entry(active_app, user):
-    if not user.has_perm("{{ app_name }}.view_{{ app_name }}"):
+def get_menu_entry(active_app, request):
+    if not request.user.has_perm("{{ app_name }}.view_{{ app_name }}"):
         return {}
     return {
             "app": "{{ app_name }}",
@@ -60,7 +60,7 @@ class {{ camel_case_app_name }}View(
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
-        context['menu'] = json.dumps(get_menu(self.request.user, "{{ app_name }}"))
+        context['menu'] = json.dumps(get_menu(self.request, "{{ app_name }}"))
         context['filters'] = json.dumps(self.filters)
         context['settings'] = json.dumps(({{ camel_case_app_name }}SettingsSerializer(get_settings()).data))
 
