@@ -21,7 +21,7 @@ import Vue from "vue";
 
 import store from "../{{ app_name }}/store.js";
 import router from "../{{ app_name }}/router.js";
-import Menu from "assets/common/menu.vue";
+import MenuBar from "assets/common/menu_bar.vue";
 
 new Vue({
     el: "#vue-app",
@@ -43,7 +43,7 @@ new Vue({
         this.menuInfo = menu;
     },
     components: {
-        "app-menu": Menu,
+        "app-menu": MenuBar,
     },
     watch: {
         "$route" (to, from) {
